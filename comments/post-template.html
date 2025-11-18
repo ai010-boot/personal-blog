@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文章标题 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-3xl mx-auto bg-white mt-10 p-8 rounded-2xl shadow-lg">
+    <h1 class="text-3xl font-bold text-gray-900">文章标题</h1>
+    <p class="text-gray-400 mt-2">发布日期：2025-01-01</p>
+
+    <hr class="my-6">
+
+    <div class="prose">
+      <p>这里是正文内容示例。你可以在这里写你的文章内容。</p>
+    </div>
+  </div>
+
+  <!-- 评论系统 -->
+  <div id="gt-comments-container" class="mt-10 max-w-3xl mx-auto"></div>
+
+  <!-- 引入 Markdown 渲染和评论系统 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="comments/comment.js"></script>
+
+  <footer class="text-center text-gray-500 py-6 mt-10">© 2025 我的博客</footer>
+</body>
+</html>
