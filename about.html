@@ -1,23 +1,91 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>关于我 | 我的博客</title>
+  <meta name="description" content="一名热爱分享的开发者，记录前端、后端与效率工具的实践笔记。">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-gray-900 text-white py-10 shadow-lg text-center">
-    <h1 class="text-3xl font-bold">关于我</h1>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white shadow-xl">
+    <div class="max-w-6xl mx-auto px-5 py-6 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="h-10 w-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-lg font-semibold">B</div>
+        <div>
+          <div class="text-xl font-semibold">我的个人博客</div>
+          <div class="text-sm text-slate-200/80">Tech · Notes · Life</div>
+        </div>
+      </div>
+      <nav class="hidden sm:flex items-center space-x-6 text-sm font-medium">
+        <a class="text-slate-200 hover:text-white transition" href="index.html">首页</a>
+        <a class="text-slate-200 hover:text-white transition" href="posts.html">文章</a>
+        <a class="text-white" href="about.html">关于我</a>
+      </nav>
+    </div>
+    <div class="max-w-6xl mx-auto px-5 pb-12">
+      <p class="text-sm uppercase tracking-[0.25em] text-slate-300/80">About</p>
+      <h1 class="text-3xl md:text-4xl font-bold mt-3">你好，我是某某</h1>
+      <p class="text-slate-200/80 mt-2">写代码、写文字，也爱折腾工具。</p>
+    </div>
   </header>
 
-  <div class="max-w-3xl mx-auto bg-white mt-10 p-8 rounded-2xl shadow-lg">
-    <h2 class="text-2xl font-semibold">你好，我是某某 👋</h2>
-    <p class="text-gray-700 mt-4 leading-relaxed">
-      这里写你的自我简介：爱好、技能、工作经历、技术方向……
-    </p>
-  </div>
+  <main class="max-w-6xl mx-auto px-5 py-10 space-y-8">
+    <section class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+      <h2 class="text-2xl font-semibold text-slate-900">我在做什么</h2>
+      <p class="text-slate-600 mt-3 leading-relaxed">
+        目前专注于 Web 技术栈，关注性能优化、工程化与开发体验。空闲时会写写工具脚本和文章，偶尔尝试新的生产力方法论。
+      </p>
+    </section>
 
-  <footer class="text-center text-gray-500 py-6 mt-10">© 2025 我的博客</footer>
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <h3 class="text-xl font-semibold text-slate-900">技能/兴趣</h3>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 bg-slate-100 rounded-full text-slate-700 text-sm">TypeScript</span>
+          <span class="px-3 py-1 bg-slate-100 rounded-full text-slate-700 text-sm">React & Vue</span>
+          <span class="px-3 py-1 bg-slate-100 rounded-full text-slate-700 text-sm">Node.js</span>
+          <span class="px-3 py-1 bg-slate-100 rounded-full text-slate-700 text-sm">性能优化</span>
+          <span class="px-3 py-1 bg-slate-100 rounded-full text-slate-700 text-sm">自动化/CI</span>
+          <span class="px-3 py-1 bg-slate-100 rounded-full text-slate-700 text-sm">效率工具</span>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <h3 class="text-xl font-semibold text-slate-900">这个博客会写什么</h3>
+        <ul class="list-disc list-inside text-slate-600 mt-3 space-y-1">
+          <li>项目实战复盘与踩坑记录</li>
+          <li>小而美的工具链配置与分享</li>
+          <li>效率/知识管理方法论</li>
+          <li>阅读与生活的片段</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+      <h3 class="text-xl font-semibold text-slate-900">联系我</h3>
+      <p class="text-slate-600 mt-2">欢迎交流想法或合作机会。</p>
+      <div class="flex flex-wrap gap-3 mt-4">
+        <a class="px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold shadow hover:shadow-lg transition" href="mailto:hi@example.com">Email</a>
+        <a class="px-4 py-2 rounded-xl border border-slate-200 text-slate-800 font-semibold hover:bg-slate-50 transition" href="https://github.com/">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+      <div>© 2025 我的博客 · 保持好奇，持续书写</div>
+      <div class="flex gap-4 mt-3 md:mt-0">
+        <a class="hover:text-slate-900" href="mailto:hi@example.com">Email</a>
+        <a class="hover:text-slate-900" href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

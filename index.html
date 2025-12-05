@@ -1,34 +1,132 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的博客 | 技术 · 思考 · 生活</title>
+  <meta name="description" content="记录技术、思考与生活的小站，分享前端、后端与效率工具的实践心得。">
+  <meta property="og:title" content="我的博客 | 技术 · 思考 · 生活">
+  <meta property="og:description" content="记录技术、思考与生活的小站，分享前端、后端与效率工具的实践心得。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-gray-900 text-white py-10 shadow-lg">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl font-bold tracking-tight">我的个人博客</h1>
-      <p class="text-gray-300 mt-2 text-lg">记录技术 · 学习成长 · 生活思考</p>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white shadow-xl">
+    <div class="max-w-6xl mx-auto px-5 py-6 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="h-10 w-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-lg font-semibold">B</div>
+        <div>
+          <div class="text-xl font-semibold">我的个人博客</div>
+          <div class="text-sm text-slate-200/80">Tech · Notes · Life</div>
+        </div>
+      </div>
+      <nav class="hidden sm:flex items-center space-x-6 text-sm font-medium">
+        <a class="text-white" href="index.html">首页</a>
+        <a class="text-slate-200 hover:text-white transition" href="posts.html">文章</a>
+        <a class="text-slate-200 hover:text-white transition" href="about.html">关于我</a>
+      </nav>
+    </div>
+    <div class="max-w-6xl mx-auto px-5 pb-14 pt-4">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.25em] text-slate-300/80">写点什么</p>
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-3">记录技术、思考与生活，让想法被看见</h1>
+          <p class="text-lg text-slate-200/80 mt-4 leading-relaxed">
+            分享前端/后端实践、效率工具和个人成长笔记。如果这些内容对你有帮助，欢迎收藏或留言交流。
+          </p>
+          <div class="flex flex-wrap items-center gap-3 mt-6">
+            <a href="posts.html" class="px-5 py-3 bg-white text-slate-900 rounded-xl font-semibold shadow hover:shadow-lg transition">查看文章</a>
+            <a href="about.html" class="px-5 py-3 border border-white/40 text-white rounded-xl font-semibold hover:bg-white/10 transition">关于我</a>
+          </div>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur">
+          <div class="text-sm text-slate-200/90 mb-3">近期动态</div>
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="flex items-center justify-between text-sm text-slate-200/80">
+                <span>2025-01-01</span><span class="rounded-full px-3 py-1 bg-emerald-500/20 text-emerald-100 text-xs">前端</span>
+              </div>
+              <div class="mt-2 text-lg font-semibold">使用 Cloudflare Pages 部署静态站</div>
+              <p class="text-slate-200/80 text-sm mt-1">整理了自动化部署、缓存策略与常见坑。</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="flex items-center justify-between text-sm text-slate-200/80">
+                <span>2024-12-22</span><span class="rounded-full px-3 py-1 bg-sky-500/20 text-sky-100 text-xs">效率</span>
+              </div>
+              <div class="mt-2 text-lg font-semibold">我的 2024 工具清单</div>
+              <p class="text-slate-200/80 text-sm mt-1">从输入法到笔记流的实用组合，持续更新。</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <nav class="bg-gray-800 text-gray-300 py-3 shadow-md">
-    <div class="max-w-4xl mx-auto flex justify-center space-x-8 text-lg">
-      <a class="hover:text-white" href="index.html">首页</a>
-      <a class="hover:text-white" href="posts.html">文章</a>
-      <a class="hover:text-white" href="about.html">关于我</a>
+  <main class="max-w-6xl mx-auto px-5">
+    <section class="mt-12">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-semibold text-slate-900">最新文章</h2>
+        <a href="posts.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">全部文章 →</a>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="flex items-center justify-between text-sm text-slate-500">
+            <span>2025-01-01 · 6 分钟</span>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs">前端</span>
+              <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs">部署</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mt-3 text-slate-900">从零到上线：构建静态博客的完整流程</h3>
+          <p class="text-slate-600 mt-2 line-clamp-2">包括内容组织、样式打磨、生成器选择、部署与缓存策略，以及常见错误排查。</p>
+          <a href="post-template.html" class="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 mt-4">阅读全文</a>
+        </article>
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 hover:-translate-y-1 hover:shadow-lg transition">
+          <div class="flex items-center justify-between text-sm text-slate-500">
+            <span>2024-12-18 · 4 分钟</span>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs">效率</span>
+              <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs">思考</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mt-3 text-slate-900">构建高效的知识库：我的实践与踩坑</h3>
+          <p class="text-slate-600 mt-2 line-clamp-2">谈谈标签体系、模板复用和检索方式，让笔记真正服务于输出。</p>
+          <a href="post-template.html" class="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 mt-4">阅读全文</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-14 mb-16">
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+        <h2 class="text-2xl font-semibold text-slate-900">写作主题</h2>
+        <p class="text-slate-600 mt-2">技术实践、工具方法与生活思考，聚焦于可复现的经验总结。</p>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm">前端工程化</span>
+          <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm">后端与云服务</span>
+          <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm">效率/知识管理</span>
+          <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm">个人成长</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+      <div>© 2025 我的博客 · 保持好奇，持续书写</div>
+      <div class="flex gap-4 mt-3 md:mt-0">
+        <a class="hover:text-slate-900" href="mailto:hi@example.com">Email</a>
+        <a class="hover:text-slate-900" href="https://github.com/">GitHub</a>
+      </div>
     </div>
-  </nav>
-
-  <div class="max-w-3xl mx-auto bg-white mt-10 p-8 rounded-2xl shadow-lg">
-    <h2 class="text-2xl font-semibold mb-4 text-gray-900">欢迎来到我的精美博客 👋</h2>
-    <p class="text-gray-700 leading-relaxed">
-      一个优雅、纯静态的个人博客系统，适合托管到 Cloudflare Pages。
-    </p>
-  </div>
-
-  <footer class="text-center text-gray-500 py-6 mt-10">© 2025 我的博客</footer>
+  </footer>
 </body>
 </html>
