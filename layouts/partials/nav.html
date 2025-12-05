@@ -1,0 +1,18 @@
+<header class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white shadow-xl">
+  <div class="max-w-6xl mx-auto px-5 py-6 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="h-10 w-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-lg font-semibold">B</div>
+      <div>
+        <div class="text-xl font-semibold">{{ .Site.Title }}</div>
+        <div class="text-sm text-slate-200/80">QA · Automation · Quality</div>
+      </div>
+    </div>
+    <nav class="hidden sm:flex items-center space-x-6 text-sm font-medium">
+      {{ range .Site.Menus.main }}
+        {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+        <a href="{{ .URL }}" class="{{ if $active }}text-white{{ else }}text-slate-200 hover:text-white{{ end }} transition">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+  {{ block "navExtra" . }}{{ end }}
+</header>

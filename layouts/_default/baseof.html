@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  {{ block "header" . }}{{ partial "nav.html" . }}{{ end }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+</body>
+</html>

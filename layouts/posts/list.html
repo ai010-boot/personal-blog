@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
+    <div class="max-w-6xl mx-auto px-5 pb-12 pt-6">
+      <p class="text-sm uppercase tracking-[0.25em] text-slate-300/80">All Posts</p>
+      <h1 class="text-3xl md:text-4xl font-bold mt-3">{{ .Title }}</h1>
+      <p class="text-slate-200/80 mt-2">{{ with .Description }}{{ . }}{{ else }}精选技术实践与思考，按时间排序。{{ end }}</p>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-5 py-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+      {{ range $paginator.Pages }}
+      <a href="{{ .RelPermalink }}" class="block bg-white rounded-2xl border border-slate-100 shadow-sm p-6 hover:-translate-y-1 hover:shadow-lg transition">
+        <div class="flex items-center justify-between text-sm text-slate-500">
+          <span>{{ .Date.Format "2006-01-02" }}{{ with .Params.readTime }} · {{ . }} 分钟{{ end }}{{ with .Params.wordcount }} · {{ . }} 字{{ end }}</span>
+          <div class="flex gap-2">
+            {{ range first 2 .Params.tags }}
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+        <h2 class="text-xl font-semibold mt-3 text-slate-900">{{ .Title }}</h2>
+        <p class="text-slate-600 mt-2 line-clamp-2">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+      </a>
+      {{ end }}
+    </div>
+
+    {{ if gt $paginator.TotalPages 1 }}
+    <div class="flex items-center justify-center gap-3 mt-10 text-sm">
+      {{ if $paginator.HasPrev }}
+        <a class="px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50" href="{{ $paginator.Prev.URL }}">上一页</a>
+      {{ end }}
+      <span class="text-slate-600">第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页</span>
+      {{ if $paginator.HasNext }}
+        <a class="px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50" href="{{ $paginator.Next.URL }}">下一页</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </main>
+{{ end }}

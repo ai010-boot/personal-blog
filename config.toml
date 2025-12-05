@@ -1,0 +1,25 @@
+baseURL = "https://example.com/"
+languageCode = "zh-CN"
+title = "我的博客 | 测试工程 · 自动化 · 质量保障"
+paginate = 6
+theme = ""
+
+[params]
+  description = "一名测试工程师的技术笔记，涵盖自动化、CI/CD、性能与安全测试、工具链搭建和案例复盘。"
+  author = "一名测试工程师"
+  email = "hi@example.com"
+  github = "https://github.com/"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "关于我"
+    url = "/about/"
+    weight = 3

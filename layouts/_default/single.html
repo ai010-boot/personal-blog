@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
+    <div class="max-w-6xl mx-auto px-5 pb-10">
+      <p class="text-sm uppercase tracking-[0.25em] text-slate-300/80">Article</p>
+      <h1 class="text-3xl md:text-4xl font-bold mt-3">{{ .Title }}</h1>
+      <div class="flex flex-wrap items-center gap-3 text-slate-200/80 mt-3 text-sm">
+        <span>发布日期：{{ .Date.Format "2006-01-02" }}</span>
+        {{ with .Params.readTime }}<span>阅读时间：{{ . }} 分钟</span>{{ end }}
+        {{ range .Params.tags }}
+          <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-100 text-xs">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ with .Params.description }}<p class="text-slate-200/80 mt-2">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-5">
+    <article class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 -mt-8 relative z-10">
+      <div class="prose prose-slate prose-lg max-w-none">
+        {{ .Content }}
+      </div>
+    </article>
+
+    <section class="mt-10 bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+      <h3 class="text-xl font-semibold text-slate-900">评论</h3>
+      <p class="text-slate-600 text-sm mt-1">欢迎留言讨论，支持 Markdown。</p>
+      <div id="gt-comments-container" class="mt-4"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/comments/comment.js"></script>
+{{ end }}

@@ -1,0 +1,9 @@
+<footer class="border-t border-slate-200 bg-white">
+  <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+    <div>© 2025 {{ .Site.Title }} · 保持好奇，持续书写</div>
+    <div class="flex gap-4 mt-3 md:mt-0">
+      {{ with .Site.Params.email }}<a class="hover:text-slate-900" href="mailto:{{ . }}">Email</a>{{ end }}
+      {{ with .Site.Params.github }}<a class="hover:text-slate-900" href="{{ . }}">GitHub</a>{{ end }}
+    </div>
+  </div>
+</footer>
